@@ -1,0 +1,161 @@
+/* App.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+  color: #ffffff;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+  overflow-y: auto;
+}
+
+/* Title */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1db954;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Mood Buttons */
+.mood-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.mood-btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mood-btn:hover {
+  background-color: #1db954;
+  color: #000;
+}
+
+.mood-btn.active {
+  background-color: #1db954;
+  border-color: #1db954;
+  color: #000;
+}
+
+/* One Song Card at a Time */
+.single-card-view {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Circular Song Card */
+.song-card {
+  width: 250px;
+  height: 250px;
+  background-color: #1e1e1e;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(29, 185, 84, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.song-card.playing {
+  border: 3px solid #1db954;
+  box-shadow: 0 0 15px 3px #1db954;
+}
+
+.song-card:hover {
+  transform: scale(1.05);
+}
+
+.song-card h3 {
+  font-size: 1.1rem;
+  color: #1db954;
+  margin-bottom: 8px;
+}
+
+.song-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.song-card audio {
+  width: 90%;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .mood-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mood-btn {
+    width: 90%;
+  }
+
+  .song-card {
+    width: 200px;
+    height: 200px;
+    padding: 16px;
+  }
+
+  .song-card h3 {
+    font-size: 1rem;
+  }
+
+  .song-card p {
+    font-size: 0.9rem;
+  }
+
+  .song-card audio {
+    width: 100%;
+  }
+}
